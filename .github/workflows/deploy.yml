@@ -3,7 +3,7 @@ name: Deploy Nuxt App to GitHub Pages
 on:
   push:
     branches:
-      - main # Обновляйте, если у вас другой основной бранч
+      - main
 
 jobs:
   build-and-deploy:
@@ -11,15 +11,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 18 # Можно выбрать актуальную версию
+          node-version: 20
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Generate static site
         run: npm run generate
@@ -29,4 +30,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # Если нужен custom domain, добавьте здесь extra параметры

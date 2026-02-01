@@ -101,8 +101,8 @@
                 <div class="mb-[30px] text-[14px]">
                     <div class="flex flex-col">
                         <div v-for="skill in skills" :key="skill.name" class="flex items-center justify-between mb-2">
-                            <p class="text-[#888888] w-[20%]">{{ skill.name }}</p>
-                            <div class="w-[70%]">
+                            <p class="text-[#888888] w-[40%] sm:w-[40%] xl:w-[20%] lg:w-[20%]">{{ skill.name }}</p>
+                            <div class="w-[30%] sm:w-[40%] md:w-[30%] lg:w-[50%] xl:w-[60%]">
                                 <div class="bg-[#161616] h-[8px] rounded-[4px]">
                                     <div class="bg-[#00cc52] h-[8px] rounded-[4px]" :style="{ width: skill.level + '%' }"></div>
                                 </div>

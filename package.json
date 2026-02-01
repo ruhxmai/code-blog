@@ -1,13 +1,15 @@
 {
   "name": "code_blog",
   "type": "module",
+  "homepage": "https://ruhxmai.githib.io/code_blog",
   "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@nuxt/content": "^3.11.0",
@@ -18,5 +20,8 @@
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.27",
     "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "gh-pages": "6.3.0"
   }
 }
